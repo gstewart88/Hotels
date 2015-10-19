@@ -7,10 +7,26 @@ class Hotel
     @guests= {}
   end
 
+  def list_hotels
+    if hotels.empty?
+      "No hotels here my sweet prince"
+    else
+      hotels.map { |key, hotel| hotel.pretty_string }.join("\n")
+    end   
+  end
+
+  def add_hotel(hotel)
+    hotels[hotel.name] = hotel
+  end
+
+  def add_guest(guest)
+    guests[guest.name] = guest
+  end
+
   def check_in(guest_name, room_title)
-      guest = guests[guest_name]
-      room = rooms.delete(room_title)
-      guest.move_in(room)
+    guest = guests[guest_name]
+    room = rooms.delete(room_title)
+    guest.move_in(room)
   end
 
   def pretty_string
@@ -52,9 +68,10 @@ class Hotel
     if guests.empty?
       "No guests here you giblet"
     else
-      
+        
       guests.map { |key, guest| guest.pretty_string }.join("\n")
     end
   end
+
 
 end

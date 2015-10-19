@@ -10,7 +10,7 @@ def menu
   puts "5. Create Room"
   puts "6. Create Guest"
   puts "7. Occupancy Report"
-  puts "8. List Hotels"
+  # puts "8. List Hotels"
   puts
   puts "0. Quit"
   puts
@@ -31,9 +31,9 @@ def list_rooms(hotel)
   puts hotel.list_rooms
 end
 
-def list_hotels(chain)
-  puts chain.list_hotels
-end
+# def list_hotels(chain)
+#   puts chain.list_hotels
+# end
 
 def create_room(hotel)
   print "Type: "
@@ -52,7 +52,7 @@ def create_guest(hotel)
 
   guest = guest.new(name: name)
 
-  hotel.add_guest(guest)
+  chain.add_guest(guest)
 
 end
 
